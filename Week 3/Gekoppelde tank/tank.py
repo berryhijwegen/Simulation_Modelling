@@ -7,7 +7,7 @@ class Tank(object):
         self.streams_out = []
 
         self.total_water = start_water
-        self.concentration_over_time = [start_salt / self.total_water]
+        self.concentration_over_time = [start_salt / self.total_water] 
         self.times = [0]
         self.total_salt = start_salt
 
@@ -34,7 +34,6 @@ class Tank(object):
             self.total_water -= stream.speed
             self.total_salt -= stream.salt_concentration * stream.speed
 
-
         salt_concentration = self.total_salt / self.total_water
 
         # Set new time
@@ -54,3 +53,9 @@ class Tank(object):
 
     def plot(self):
         plt.plot(self.times, self.concentration_over_time, self.line_color, label=self.name)
+
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.__str__()

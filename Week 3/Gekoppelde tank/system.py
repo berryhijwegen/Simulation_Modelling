@@ -8,10 +8,17 @@ class System(object):
         self.tanks.append(tank)
     
     def run(self, steps):
-        for tank in self.tanks:
-            for i in range(steps):
-                tank.step()
-            tank.plot()
+        for i in range(steps):
+            self.step()
+        self.plot()
         
         plt.legend()
+        plt.savefig(f'plot_{steps}steps.png')
         plt.show()
+    def step(self):
+        for tank in self.tanks:
+            tank.step()
+    
+    def plot(self):
+        for tank in self.tanks:
+            tank.plot()
