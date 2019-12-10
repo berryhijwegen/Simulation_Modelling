@@ -51,5 +51,6 @@ for n in list_n:
     print(f"n = {n}")
     [function(x0,y0,n,end) for function in comparison_functions]
     plt.legend()
+    plt.savefig(f'plot_heun_vs_euler_steps-{n}.png')
     plt.show()
     input(f"Press enter to continue.\n------\n")

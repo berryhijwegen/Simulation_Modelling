@@ -29,6 +29,7 @@ def plot_me():
     axes_height.set_ylabel('Height in m')
     axes_velocity.set_ylabel('Velocity in m/s')
     axes_velocity.set_xlabel('Time in s')
+    matplotlib.pyplot.savefig('../plots/stretch.png')
     matplotlib.pyplot.show()
 
 plot_me()
